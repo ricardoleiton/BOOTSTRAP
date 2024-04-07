@@ -153,9 +153,12 @@ header{
 }
 
 .cont-location img{
-    width: 60%;
+    width: 400px;
+    height: 200px;
     display: block;
+    cursor: pointer;
     margin: auto;
+    margin-bottom: 20px;
 }
 
 .cont-location{
@@ -164,6 +167,25 @@ header{
     width: 100%;
     font-weight: 400;
     text-align: center;
+}
+
+.registro{
+    background: #b7e68c;
+}
+
+.registro h2 {
+    margin-top: 20px; /* Espacio entre la línea y el texto */
+}
+
+.registro button {
+    border-bottom: 2px solid black;
+    margin-bottom: 20px;
+}
+
+.contenedor-registro{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
 }
 
 /* Footer */
