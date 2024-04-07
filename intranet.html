@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intranet</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'> <! ––Integración de boxicons al proyecto––>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&family=Pacifico&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="estilos.css" <! ––Integración de la hoja de estilo css––>
+</head>
+<body>
+    <main>
+        <section class="contenedor" id="servicio"> <! ––crea primera sección––>
+            <a href="/index.html" target="_blank">Volver</a>
+            <h2 class="subtitulo">PROGRAMAS</h2>
+            <div class="contenedor-servicio">
+                <img src="Images/html-3.svg" alt="">
+                <div class="checklist-servicio">
+                    <div class="service">
+                        <h3 class="n-service"><span class="number">1</span>Conversor de Dólares a Pesos y Viceversa</h3>
+                        
+                        <label for="cotizacion">Cotización del Dólar:</label>
+                        <input type="number" id="cotizacion" placeholder="Ingrese cotización dólar">
+                        <br>
+
+                        <label for="conversion">Seleccione la conversión:</label>
+                        <select id="conversion">
+                        <option value="dolares">Dólares a Pesos</option>
+                        <option value="pesos">Pesos a Dólares</option>
+                        </select>
+                        <br>
+
+                        <label for="cantidad">Cantidad:</label>
+                        <input type="number" id="cantidad" placeholder="Ingrese la cantidad">
+                        <br>
+
+                        <button onclick="realizarConversion()">Convertir</button>
+
+                        <p id="resultado"></p>
+                        
+                        <script>
+                            function realizarConversion() {
+                                const cotizacion = parseFloat(document.getElementById("cotizacion").value);
+                                const cantidad = parseFloat(document.getElementById("cantidad").value);
+                                const conversion = document.getElementById("conversion").value;
+                                let resultado;
+                    
+                                if (isNaN(cotizacion) || isNaN(cantidad)) {
+                                    resultado = "Por favor, ingrese valores válidos.";
+                                } else {
+                                    if (conversion === "dolares") {
+                                        resultado = `${cantidad} Dólares equivale a ${cantidad * cotizacion} Pesos.`;
+                                    } else if (conversion === "pesos") {
+                                        resultado = `${cantidad} Pesos equivale a ${cantidad / cotizacion} Dólares.`;
+                                    } else {
+                                        resultado = "Seleccione una conversión válida.";
+                                    }
+                                }
+                    
+                                document.getElementById("resultado").textContent = resultado;
+                            }
+                        </script>
+                    </div>
+                    <div class="service">
+                        <h3 class="n-service"><span class="number">2</span>Registro de Pasajeros para Excursiones</h3>
+                        <label for="nombre">Nombre:</label>
+                        <input type="text" id="nombre" placeholder="Ingrese el nombre">
+                        <br>
+
+                        <label for="documento">Documento:</label>
+                        <input type="text" id="documento" placeholder="Ingrese el documento">
+                        <br>
+
+                        <button onclick="registrarPasajero()">Registrar Pasajero</button>
+                        <button onclick="listarPasajeros()">Listar Pasajeros</button>
+
+                        <ul id="listaPasajeros"></ul>
+
+                        <script>
+                            const pasajeros = [];
+                    
+                            function registrarPasajero() {
+                                const nombre = document.getElementById("nombre").value;
+                                const documento = document.getElementById("documento").value;
+                    
+                                if (nombre.trim() === "" || documento.trim() === "") {
+                                    alert("Por favor, complete todos los campos.");
+                                    return;
+                                }
+                    
+                                const pasajero = { nombre, documento };
+                                pasajeros.push(pasajero);
+                    
+                                document.getElementById("nombre").value = "";
+                                document.getElementById("documento").value = "";
+                    
+                                alert("Pasajero registrado con éxito.");
+                            }
+                    
+                            function listarPasajeros() {
+                                const listaPasajeros = document.getElementById("listaPasajeros");
+                                listaPasajeros.innerHTML = "";
+                    
+                                if (pasajeros.length === 0) {
+                                    listaPasajeros.innerHTML = "<p>No hay pasajeros registrados.</p>";
+                                    return;
+                                }
+                    
+                                for (let i = 0; i < pasajeros.length; i++) {
+                                    const pasajero = pasajeros[i];
+                                    const li = document.createElement("li");
+                                    li.textContent = `Nombre: ${pasajero.nombre}, Documento: ${pasajero.documento}`;
+                                    
+                                    // Agregamos un botón de borrado para cada pasajero
+                                    const botonBorrar = document.createElement("button");
+                                    botonBorrar.textContent = "Borrar";
+                                    botonBorrar.onclick = function() {
+                                        borrarPasajero(i);
+                                    };
+                    
+                                    li.appendChild(botonBorrar);
+                                    listaPasajeros.appendChild(li);
+                                }
+                            }
+                    
+                            function borrarPasajero(index) {
+                                pasajeros.splice(index, 1);
+                                listarPasajeros();
+                            }
+
+                            </script>                                                
+                    </div>
+                    <div class="service">
+                        <h3 class="n-service"><span class="number">3</span>Vectores en HTML</h3>
+                        <script>
+
+                            // Definir un vector de cinco posiciones
+                            var nombres = [];
+
+                            // Almacenar cinco nombres usando el método .push()
+                            nombres.push("Roman");
+                            nombres.push("Felipe");
+                            nombres.push("Amadeo");
+                            nombres.push("Ricardo");
+                            nombres.push("Enzo");
+
+                            // Concatenar todos los nombres usando el separador " - "
+                            var nombresConcatenados = nombres.join(" - ");
+
+                            // Mostrar todos los nombres en un alert
+                            alert(nombresConcatenados);
+
+                            // Imprimir de a uno por consola
+                            for (var i = 0; i < nombres.length; i++) {
+                                console.log(nombres[i]);
+                            }
+
+                            // Mostrar los nombres en un elemento HTML <div>
+                            var divElement = document.createElement("div");
+                            var ulElement = document.createElement("ul");
+                            
+                            for (var i = 0; i < nombres.length; i++) {
+                                var liElement = document.createElement("li");
+                                liElement.textContent = nombres[i];
+                                ulElement.appendChild(liElement);
+                            }
+
+                            // Agregar estilos para centrar el contenido
+                            divElement.style.textAlign = "center";
+                            ulElement.style.listStyle = "none"; // Eliminar los puntos de la lista
+
+                            divElement.appendChild(ulElement);
+                            document.body.appendChild(divElement);
+                        </script>    
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="es"> <!-- Seteo idioma Español -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mendoza Turismo</title> <!-- Seteo título del sitio web -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'> <!-- Integración de boxicons al proyecto -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&family=Pacifico&display=swap" rel="stylesheet">
+    <!-- Agrego codigo bootstrap  de CDN via jsDelivr desde almacenamiento local (librerias free) -->
+    <link rel="stylesheet" href="./css/bootstrap.min.css"> <!-- Integración de bootstrapal proyecto -->
+    <link rel="stylesheet" href="./css/estilos.css"> <!-- Integración de hoja de estilo al proyecto -->
+</head>
+<body>
+    <header class="header" id="inicio">
+        <img src="Images/menu.svg" alt="" class="menu"> <!-- Importa imagen de menu -->
+        <nav class="menu-navegacion"> <!-- menu de navegación para las opciones del menu -->
+        <a href="#inicio">Inicio</a>
+        <a href="#servicio">Tours Grupales</a>
+        <a href="#galeria">Galeria</a>
+        <a href="#ubicacion">Paquetes</a>
+        <a href="#contacto">Contacto</a>
+        </nav>
+    <div class="contenedor head">
+        <h1 class="titulo">Turismo en Mendoza</h1> <!-- Seteo título del sitio web -->
+        <p class="copy">Información turística de la provincia de Mendoza.</p> <!-- Seteo primer parrafo -->
+        <p class="copy">Lugares para visitar, excursiones, destinos, alojamiento, mapas y mucho más...</p> <!-- Seteo segundo parrafo -->
+    </div>
+    </header>
+    <main>
+        <section class="contenedor" id="servicio"> <!-- Primera seccion -->
+            <h2 class="subtitulo">Tours Grupales</h2>
+            <div class="contenedor-servicio">
+                <img src="Images/checklist.svg" alt="">
+                <div class="checklist-servicio">
+                    <div class="service">
+                        <h3 class="n-service"><span class="number">1</span>Bodegueando</h3>
+                        <p>Descubrí la “Ruta del vino” a través de la visita a 3 bodegas, una de gran escala y reconocimiento a nivel internacional.</p>
+                    </div>
+                    <div class="service">
+                        <h3 class="n-service"><span class="number">2</span>Aventura</h3>
+                        <p>Una aventura inolvidable donde podrás apreciar la espectacular vista del Valle de Potrerillos. Explora la Cordillera de Los Andes en un paseo a caballo de 2 horas.</p>
+                    </div>
+                    <div class="service">
+                        <h3 class="n-service"><span class="number">3</span>Aconcagua</h3>
+                        <p>Disfruta de una experiencia emocionante de día completo, donde conoceremos el campamento al que se dirigen todas las expediciones para iniciar los ascensos al cerro Aconcagua.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="gallery" id="galeria">
+            <div class="contenedor">
+                <h2 class="subtitulo">Galeria</h2>
+                <div class="contenedor-galeria">
+                    <img src="Images/uno.jpg" alt="" class="img-galeria">
+                    <img src="Images/dos.jpg" alt="" class="img-galeria">
+                    <img src="Images/tres.jpg" alt="" class="img-galeria">
+                    <img src="Images/cuatro.jpg" alt="" class="img-galeria">
+                    <img src="Images/cinco.jpg" alt="" class="img-galeria">
+                    <img src="Images/seis.jpg" alt="" class="img-galeria">
+                </div>
+            </div>
+        </section>
+        <section class="contenedor" id="ubicacion">
+            <h2 class="subtitulo">Paquetes:</h2>
+            <section class="location">
+                <div class="cont-location">
+                    <img src="Images/mza.png" alt="">
+                    <h3 class="n-location">Tres días en Mendoza</h3>
+                    <p>Un itinerario completo por la Ciudad de Mendoza y sus bodegas para quienes cuentan con poco tiempo para recorrer.</p>
+                </div>
+                <div class="cont-location">
+                    <img src="Images/uco.webp" alt="">
+                    <h3 class="n-location">Uco</h3>
+                    <p>Resorts de lujo, gastronomía exclusiva, bodegas de primer nivel y aventuras únicas para los amantes del vino. Un itinerario completo por el Valle de Uco que combina el lujo y la comodidad.</p>
+                </div>
+                <form action="conexion.php" method="post">
+                    <h2>Registro de actividades recreativas</h2>
+                    <h5>Rafting - Trekking - Cabalgata - Pesca</h5>
+                    <div class="input-wrapper">
+                        <input type="text" name="actividad" placeholder="Actividad">
+                        <br>
+                        <br>
+                        <img class="input-icon" src="Images/rafting.svg" alt="" style="width: 40px; height: 40px">
+                        <img class="input-icon" src="Images/trekking.svg" alt="" style="width: 40px; height: 40px">
+                        <img class="input-icon" src="Images/horse.svg" alt="" style="width: 40px; height: 40px">
+                        <img class="input-icon" src="Images/fishing.svg" alt="" style="width: 40px; height: 40px">
+                    </div>
+                    <br>
+                    <div class="input-wrapper">
+                        <input type="text" name="dni" placeholder="DNI">
+                        <img class="input-icon" src="Images/name.svg" alt="">
+                    </div>
+                    <br>
+                    <div class="input-wrapper">
+                        <input type="text" name="nombre" placeholder="Nombre y Apellido">
+                        <img class="input-icon" src="Images/name.svg" alt="">
+                    </div>
+                    <br>
+                    <div class="input-wrapper">
+                        <input type="text" name="email" placeholder="Dirección de correo">
+                        <img class="input-icon" src="Images/email.svg" alt="">
+                    </div>
+                    <br>
+                    <div class="input-wrapper">
+                        <input type="text" name="telefono" placeholder="Teléfono">
+                        <img class="input-icon" src="Images/phone.svg" alt="">
+                    </div>
+                    <br>
+                    <button type="submit" name="enviar" onclick="enviarAlerta()">Enviar</button>
+                    <script>
+                        function enviarAlerta() {
+                          alert('Registro Exitoso!!');
+                        }
+                      </script>
+                    <button type="submit" name="eliminar" onclick="eliminarAlerta()">Eliminar</button>
+                    <script>
+                        function eliminarAlerta() {
+                          alert('Registro Eliminado!!');
+                        }
+                      </script>
+                </form>
+                <form action="listar.php" method="post"></form>
+                    <button type="submit" name="listar" onclick="listarAlerta()">Listar</button>
+                    <script>
+                        function listarAlerta() {
+                          alert('Lista Actualizada!!');
+                        }
+                      </script>
+                </form>                
+            </section>
+        </section>
+    </main>
+    <footer id="contacto">
+        <div class="contenedor footer-content">
+            <div class="contact-us">
+                <h2 class="brand">Leitón Design</h2>
+                <p>Diseño Web HTML</p>
+                <a href="/intranet.html" target="_blank">Programas</a>
+            </div>
+            <div class="social-media">
+                <a href="./" class="social-media-icon">
+                    <i class='bx bxl-facebook'></i> <! ––Importa font de facebook––>
+                </a>
+                <a href="./" class="social-media-icon">
+                    <i class='bx bxl-twitter'></i> <! ––Importa font de twitter––>
+                </a>
+                <a href="./" class="social-media-icon">
+                    <i class='bx bxl-instagram'></i> <! ––Importa font de instagram––>
+                </a>
+            </div>
+        </div>
+        <div class="line"></div>
+    </footer>
+    <script src="js/menu.js"></script>
+</body>
+</html>
