@@ -107,11 +107,24 @@ header{
 }
 
 .checklist-servicio{
-    width: 45%;
-
+    display: inline-block;
 }
 
 .service{
+    margin-bottom: 20px;
+    display: inline-block;
+    margin-top: 20px;
+    width: 100%;
+    font-weight: 400;
+    text-align: center;
+}
+
+.service img{
+    width: 400px;
+    height: 200px;
+    display: block;
+    cursor: pointer;
+    margin: auto;
     margin-bottom: 20px;
 }
 
