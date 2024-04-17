@@ -187,6 +187,24 @@
     </main>
     <footer id="contacto">
         <div class="container-sm contenedor footer-content"> <!-- BootStrap - Uso Container -->
+            <div>
+                <h2>Contacto</h2>
+                <form action="conexion.php" method="post">
+                <div class="input-wrapper">
+                    <input type="text" name="nombre" placeholder="Nombre y Apellido">
+                </div>
+                <div class="input-wrapper">
+                    <input type="text" name="email" placeholder="Correo Electrónico">
+                </div>
+                <div class="input-wrapper">
+                    <input type="text" name="asunto" placeholder="Asunto">
+                </div>
+                <div class="input-wrapper">
+                    <textarea name="mensaje" placeholder="Mensaje"></textarea>
+                </div>
+                <button type="submit" name="enviar">Enviar</button>
+                </form>
+            </div>
             <div class="contact-us">
                 <h2 class="brand">Leitón Design</h2>
                 <p>Diseño Web HTML</p>
