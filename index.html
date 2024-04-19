@@ -44,7 +44,7 @@
             </div>
         </div>
     </nav>
-    <header class="header" id="inicio">
+    <header class="container-fluid header" id="inicio">
         <img src="Images/menu.svg" alt="" class="menu"> <!-- Importa imagen de menu -->
         <nav class="menu-navegacion"> <!-- menu de navegación para las opciones del menu -->
         <a href="#inicio">Inicio</a>
@@ -128,83 +128,100 @@
             </section>
         </section>
         <!-- Actividades -->
-        <section class="registro" id="actividades">
-            <div class="container-sm contenedor-registro"> <!-- BootStrap - Uso Container -->
-                <form action="conexion.php" method="post">
-                    <h2>Actividades recreativas</h2>
-                    <h5>Rafting - Trekking - Cabalgata - Pesca</h5>
-                    <div class="input-wrapper">
-                        <input type="text" name="actividad" placeholder="Actividad">
-                        <br>
-                        <br>
-                        <img class="input-icon" src="Images/rafting.svg" alt="" style="width: 40px; height: 40px">
-                        <img class="input-icon" src="Images/trekking.svg" alt="" style="width: 40px; height: 40px">
-                        <img class="input-icon" src="Images/horse.svg" alt="" style="width: 40px; height: 40px">
-                        <img class="input-icon" src="Images/fishing.svg" alt="" style="width: 40px; height: 40px">
+        <div class="container text-center"> <!-- BootStrap - Uso Gris 2/2 -->
+            <div class="row">
+              <div class="col">
+                <section class="registro" id="actividades">
+                    <div class="contenedor-registro">
+                        <form action="conexion.php" method="post">
+                            <h2>Actividades recreativas</h2>
+                            <h5>Rafting - Trekking - Cabalgata - Pesca</h5>
+                            <div class="input-wrapper">
+                                <input type="text" name="actividad" placeholder="Actividad">
+                                <br>
+                                <br>
+                                <img class="input-icon" src="Images/rafting.svg" alt="" style="width: 40px; height: 40px">
+                                <img class="input-icon" src="Images/trekking.svg" alt="" style="width: 40px; height: 40px">
+                                <img class="input-icon" src="Images/horse.svg" alt="" style="width: 40px; height: 40px">
+                                <img class="input-icon" src="Images/fishing.svg" alt="" style="width: 40px; height: 40px">
+                            </div>
+                            <br>
+                            <div class="input-wrapper">
+                                <input type="text" name="dni" placeholder="DNI">
+                                <img class="input-icon" src="Images/name.svg" alt="">
+                            </div>
+                            <br>
+                            <div class="input-wrapper">
+                                <input type="text" name="nombre" placeholder="Nombre y Apellido">
+                                <img class="input-icon" src="Images/name.svg" alt="">
+                            </div>
+                            <br>
+                            <div class="input-wrapper">
+                                <input type="text" name="email" placeholder="Dirección de correo">
+                                <img class="input-icon" src="Images/email.svg" alt="">
+                            </div>
+                            <br>
+                            <div class="input-wrapper">
+                                <input type="text" name="telefono" placeholder="Teléfono">
+                                <img class="input-icon" src="Images/phone.svg" alt="">
+                            </div>
+                            <br>
+                            <button type="submit" name="enviar" onclick="enviarAlerta()">Enviar</button>
+                            <script>
+                                function enviarAlerta() {
+                                  alert('Registro Exitoso!!');
+                                }
+                              </script>
+                            <button type="submit" name="eliminar" onclick="eliminarAlerta()">Eliminar</button>
+                            <script>
+                                function eliminarAlerta() {
+                                  alert('Registro Eliminado!!');
+                                }
+                              </script>
+                            <button type="submit" name="listar" onclick="listarAlerta()">Listar</button>
+                            <script>
+                                function listarAlerta() {
+                                  alert('Lista Actualizada!!');
+                                }
+                            </script>
+                        </form>
                     </div>
-                    <br>
-                    <div class="input-wrapper">
-                        <input type="text" name="dni" placeholder="DNI">
-                        <img class="input-icon" src="Images/name.svg" alt="">
+                </section>
+              </div>
+              <div class="col">
+                <section class="registro" id="actividades">
+                    <div class="contenedor-registro">
+                        <form action="conexion.php" method="post">
+                            <h2>Sugerencias</h2>
+                            <br>
+                            <h5>Dejanos tu comentario</h5>
+                            <br>
+                            <div class="input-wrapper">
+                                <input type="text" name="nombre" placeholder="Nombre y Apellido">
+                            </div>
+                            <br>
+                            <div class="input-wrapper">
+                                <input type="text" name="email" placeholder="Correo Electrónico">
+                            </div>
+                            <br>
+                            <div class="input-wrapper">
+                                <input type="text" name="asunto" placeholder="Asunto">
+                            </div>
+                            <br>
+                            <div class="input-wrapper">
+                                <textarea name="mensaje" placeholder="Mensaje"></textarea>
+                            </div>
+                            <br>
+                            <button type="submit" name="enviar">Enviar</button>
+                        </form>                        
                     </div>
-                    <br>
-                    <div class="input-wrapper">
-                        <input type="text" name="nombre" placeholder="Nombre y Apellido">
-                        <img class="input-icon" src="Images/name.svg" alt="">
-                    </div>
-                    <br>
-                    <div class="input-wrapper">
-                        <input type="text" name="email" placeholder="Dirección de correo">
-                        <img class="input-icon" src="Images/email.svg" alt="">
-                    </div>
-                    <br>
-                    <div class="input-wrapper">
-                        <input type="text" name="telefono" placeholder="Teléfono">
-                        <img class="input-icon" src="Images/phone.svg" alt="">
-                    </div>
-                    <br>
-                    <button type="submit" name="enviar" onclick="enviarAlerta()">Enviar</button>
-                    <script>
-                        function enviarAlerta() {
-                          alert('Registro Exitoso!!');
-                        }
-                      </script>
-                    <button type="submit" name="eliminar" onclick="eliminarAlerta()">Eliminar</button>
-                    <script>
-                        function eliminarAlerta() {
-                          alert('Registro Eliminado!!');
-                        }
-                      </script>
-                    <button type="submit" name="listar" onclick="listarAlerta()">Listar</button>
-                    <script>
-                        function listarAlerta() {
-                          alert('Lista Actualizada!!');
-                        }
-                    </script>
-                </form>
+                </section>
+              </div>
             </div>
-        </section>
+          </div>
     </main>
     <footer id="contacto">
         <div class="container-sm contenedor footer-content"> <!-- BootStrap - Uso Container -->
-            <div>
-                <h2>Contacto</h2>
-                <form action="conexion.php" method="post">
-                <div class="input-wrapper">
-                    <input type="text" name="nombre" placeholder="Nombre y Apellido">
-                </div>
-                <div class="input-wrapper">
-                    <input type="text" name="email" placeholder="Correo Electrónico">
-                </div>
-                <div class="input-wrapper">
-                    <input type="text" name="asunto" placeholder="Asunto">
-                </div>
-                <div class="input-wrapper">
-                    <textarea name="mensaje" placeholder="Mensaje"></textarea>
-                </div>
-                <button type="submit" name="enviar">Enviar</button>
-                </form>
-            </div>
             <div class="contact-us">
                 <h2 class="brand">Leitón Design</h2>
                 <p>Diseño Web HTML</p>
