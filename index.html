@@ -11,6 +11,7 @@
     <!-- Agrego codigo bootstrap  de CDN via jsDelivr desde almacenamiento local (librerias free) -->
     <link rel="stylesheet" href="./css/bootstrap.min.css"> <!-- Integración de bootstrapal proyecto -->
     <link rel="stylesheet" href="./css/estilos.css"> <!-- Integración de hoja de estilo al proyecto -->
+    <script src="js/bootstrap.bundle.min.js"></script> <!-- Librería para ejecución JS de Bootstrap -->
 </head>
 <body>
     <!-- Integración de barra de navegacion BootStrap -->
@@ -107,10 +108,10 @@
             </div>
         </section>
         <!-- Paquetes -->
-        <section class="contenedor" id="ubicacion">
+        <section class="container-sm contenedor" id="ubicacion"> <!-- BootStrap - Uso Container -->
             <h2 class="subtitulo">Paquetes:</h2>
             <section class="location">
-                <div class="container-sm cont-location"> <!-- BootStrap - Uso Container -->
+                <div class="cont-location">
                     <div class="row"> <!-- BootStrap - Uso Layout - Grid 2 columnas -->
                         <div class="col"> <!-- BootStrap - Uso Layout - Grid 1/2 -->
                             <img src="Images/mza.png" alt="">
@@ -128,57 +129,61 @@
             </section>
         </section>
         <!-- Actividades -->
-        <div class="container text-center"> <!-- BootStrap - Uso Gris 2/2 -->
+        <div class="container-sm text-center"> <!-- BootStrap - Uso Gris 2/2 -->
             <div class="row">
               <div class="col">
                 <section class="registro" id="actividades">
                     <div class="contenedor-registro">
                         <form action="conexion.php" method="post">
                             <h2>Actividades recreativas</h2>
-                            <h5>Rafting - Trekking - Cabalgata - Pesca</h5>
                             <div class="input-wrapper">
-                                <input type="text" name="actividad" placeholder="Actividad">
-                                <br>
-                                <br>
                                 <img class="input-icon" src="Images/rafting.svg" alt="" style="width: 40px; height: 40px">
                                 <img class="input-icon" src="Images/trekking.svg" alt="" style="width: 40px; height: 40px">
                                 <img class="input-icon" src="Images/horse.svg" alt="" style="width: 40px; height: 40px">
                                 <img class="input-icon" src="Images/fishing.svg" alt="" style="width: 40px; height: 40px">
+                                <br>
+                                <br>
+                                <select name="actividad">
+                                    <option value="Rafting">Rafting</option>
+                                    <option value="Trekking">Trekking</option>
+                                    <option value="Cabalgata">Cabalgata</option>
+                                    <option value="Pesca">Pesca</option>
+                                </select>
                             </div>
                             <br>
                             <div class="input-wrapper">
                                 <input type="text" name="dni" placeholder="DNI">
-                                <img class="input-icon" src="Images/name.svg" alt="">
+                                <img class="input-icon" src="Images/dni.svg" alt="" style="width: 30px; height: 30px">
                             </div>
                             <br>
                             <div class="input-wrapper">
                                 <input type="text" name="nombre" placeholder="Nombre y Apellido">
-                                <img class="input-icon" src="Images/name.svg" alt="">
+                                <img class="input-icon" src="Images/contacto.svg" alt="" style="width: 30px; height: 30px">
                             </div>
                             <br>
                             <div class="input-wrapper">
-                                <input type="text" name="email" placeholder="Dirección de correo">
-                                <img class="input-icon" src="Images/email.svg" alt="">
+                                <input type="text" name="email" placeholder="Correo Electronico">
+                                <img class="input-icon" src="Images/mail.svg" alt="" style="width: 30px; height: 30px">
                             </div>
                             <br>
                             <div class="input-wrapper">
                                 <input type="text" name="telefono" placeholder="Teléfono">
-                                <img class="input-icon" src="Images/phone.svg" alt="">
+                                <img class="input-icon" src="Images/telefono.svg" alt="" style="width: 30px; height: 30px">
                             </div>
                             <br>
-                            <button type="submit" name="enviar" onclick="enviarAlerta()">Enviar</button>
+                            <button type="submit" class="btn btn-primary" name="enviar" onclick="enviarAlerta()">Enviar</button>
                             <script>
                                 function enviarAlerta() {
                                   alert('Registro Exitoso!!');
                                 }
                               </script>
-                            <button type="submit" name="eliminar" onclick="eliminarAlerta()">Eliminar</button>
+                            <button type="submit" class="btn btn-primary" name="eliminar" onclick="eliminarAlerta()">Eliminar</button>
                             <script>
                                 function eliminarAlerta() {
                                   alert('Registro Eliminado!!');
                                 }
-                              </script>
-                            <button type="submit" name="listar" onclick="listarAlerta()">Listar</button>
+                            </script>
+                            <button type="submit" class="btn btn-primary" name="listar" onclick="listarAlerta()">Listar</button>
                             <script>
                                 function listarAlerta() {
                                   alert('Lista Actualizada!!');
@@ -191,28 +196,60 @@
               <div class="col">
                 <section class="registro" id="actividades">
                     <div class="contenedor-registro">
-                        <form action="conexion.php" method="post">
+                        <form action="contacto.php" method="post">
                             <h2>Sugerencias</h2>
-                            <br>
                             <h5>Dejanos tu comentario</h5>
-                            <br>
                             <div class="input-wrapper">
                                 <input type="text" name="nombre" placeholder="Nombre y Apellido">
+                                <img class="input-icon" src="Images/contacto.svg" alt="" style="width: 30px; height: 30px">
                             </div>
                             <br>
                             <div class="input-wrapper">
                                 <input type="text" name="email" placeholder="Correo Electrónico">
+                                <img class="input-icon" src="Images/mail.svg" alt="" style="width: 30px; height: 30px">
+                            </div>
+                            <br>
+                            <div class="input-wrapper">
+                                <input type="text" name="telefono" placeholder="Teléfono">
+                                <img class="input-icon" src="Images/telefono.svg" alt="" style="width: 30px; height: 30px">
                             </div>
                             <br>
                             <div class="input-wrapper">
                                 <input type="text" name="asunto" placeholder="Asunto">
+                                <img class="input-icon" src="Images/asunto.svg" alt="" style="width: 30px; height: 30px">
                             </div>
                             <br>
                             <div class="input-wrapper">
                                 <textarea name="mensaje" placeholder="Mensaje"></textarea>
+                                <img class="input-icon" src="Images/message.svg" alt="" style="width: 30px; height: 30px">
                             </div>
                             <br>
-                            <button type="submit" name="enviar">Enviar</button>
+                            <!-- <button type="submit" name="enviar">Enviar</button> -->
+
+                            <!-- Boton del modal sobre el formulario de sugerencias -->
+                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                                Enviar
+                            </button>
+
+                            <!-- Uso de Modal sobre formulario de sugerencias-->
+                            <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                    <h1 class="modal-title fs-5" id="staticBackdropLabel">Atención</h1>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                    Estás seguro de enviar esta sugerencia!!!
+                                    </div>
+                                    <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
+                                    <!-- Boton dentro de modal -->
+                                    <button type="submit" class="btn btn-primary" name="enviar">Si estoy seguro</button>
+                                    </div>
+                                </div>
+                                </div>
+                            </div>
                         </form>                        
                     </div>
                 </section>
@@ -223,8 +260,10 @@
     <footer id="contacto">
         <div class="container-sm contenedor footer-content"> <!-- BootStrap - Uso Container -->
             <div class="contact-us">
-                <h2 class="brand">Leitón Design</h2>
-                <p>Diseño Web HTML</p>
+                <h3>Contacto</h3>
+                <p>Ministerio de Cultura y Turismo</p>
+                <p>Teléfono: 0800-222-6678</p>
+                <p>Mail: info@mendoza</p>
                 <a href="/intranet.html" target="_blank">Programas</a>
             </div>
             <div class="social-media">

@@ -183,16 +183,17 @@ header{
 }
 
 .registro{
+    height: 460px;
     background: #b7e68c;
 }
 
 .registro h2 {
-    margin-top: 20px; /* Espacio entre la línea y el texto */
+    margin-top: 10px; /* Espacio entre la línea y el texto */
 }
 
 .registro button {
     border-bottom: 2px solid black;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
 .contenedor-registro{
